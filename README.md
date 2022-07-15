@@ -20,4 +20,5 @@ pymongo `pip install pymongo`
 
 Dm me TB#5767 or 997627346678980639
 
-(there are no perms for the discord bot at the moment easily can be added)
+there a no discord perms (easily added)
+passwords arent hashed 
