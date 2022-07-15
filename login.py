@@ -11,8 +11,6 @@ collection1 = db["keys"]
 def main():
     print("[1] Login: ")
     print("[2] Register: ")
-    print("[3] Admin: ")
-    print("[4] Generate Key: ")
     choice = int(input("Enter your choice: "))
     if choice == 1:
         login()
@@ -32,21 +30,21 @@ def logindb(username, password):
         return print("Login failed")
         main()
 
-def generatekey():
-    #generate a sting of random characters
-    chars = " abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456%()`$£! "
-    key=""
-    for x in range(0,15):
-        charc = random.choice(chars)
-        key  = key + charc
-    print(key)
-    post = {"key": key, "redeemed": False}
-    if collection1.insert_one(post):
-        print("Key Generated")
-        main()
-    else:
-        print("Key Generation Failed")
-        main()
+# def generatekey(): in the discord bot
+#     #generate a sting of random characters
+#     chars = " abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456%()`$£! "
+#     key=""
+#     for x in range(0,15):
+#         charc = random.choice(chars)
+#         key  = key + charc
+#     print(key)
+#     post = {"key": key, "redeemed": False}
+#     if collection1.insert_one(post):
+#         print("Key Generated")
+#         main()
+#     else:
+#         print("Key Generation Failed")
+#         main()
 
 def createaccdb(username, password):
     post = {"username": username, "password": password, "sub": False, "creation": time.strftime("%d/%m/%Y")}
